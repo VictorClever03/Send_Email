@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 14pt;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #212529;
+    color:aliceblue
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+header nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    background-color: aliceblue;
+}
+nav ul{
+    display: flex;
+    gap: 30px;
+}
+.checkBurger{
+    display: none;
+}
+.checkBurger .close{
+    display: none;
+}
+#burger{
+    display: none;
+}
+
+nav ul li{
+    padding: 5px;
+}
+nav ul li:hover{
+ 
+    background: rgb(22, 22, 22);
+    filter: brightness(5);
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+
+    font-size: 100pt;
+    text-align: center;
+}
+
+@media(max-width:700px){
+    main{
+        display: none;
+    }
+    .checkBurger{
+        z-index: 111;
+        display: flex;
+    }
+   
+    span{
+        z-index:111;
+    }
+    
+    nav ul{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        /* height: calc(100vh - 10vh); */
+        height: 100vh;
+        top: 0;
+        background-color: #212529;
+        left: -100%;
+        transition: all 1s;
+    }
+    /* #burger ~ ul {
+       
+    } */
+   #burger:checked ~  .checkBurger .close{
+    display: block;
+}
+  #burger:checked ~ .checkBurger .open{
+    display: none;
+}
+    #burger:checked ~   ul {
+
+        left:0;
+    }
+
+
+}
